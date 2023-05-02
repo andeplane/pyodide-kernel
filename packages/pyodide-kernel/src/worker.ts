@@ -1,6 +1,8 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+// import { openDB } from 'idb';
+
 import type Pyodide from 'pyodide';
 
 import type { DriveFS } from '@jupyterlite/contents';
@@ -33,6 +35,7 @@ export class PyodideRemoteKernel {
     await this.initFilesystem(options);
     await this.initPackageManager(options);
     await this.initKernel(options);
+    // await this.patchCognite(options);
     await this.initGlobals(options);
     this._initializer?.resolve();
   }
@@ -74,6 +77,45 @@ export class PyodideRemoteKernel {
     `);
   }
 
+  // protected async patchCognite(options: IPyodideWorkerKernel.IOptions): Promise<void> {
+  //   // First see if we have a token set in the CogniteVault IndexedDB store
+  //   const db = await openDB('CogniteVault', 1, {
+  //     upgrade: (upgradeDB: any) =>
+  //       upgradeDB.createObjectStore('TokenStore', { keyPath: 'id' }),
+  //   });
+
+  //   // If the token is set in the store, let's read it out
+  //   if (db.objectStoreNames.contains('TokenStore')) {
+  //     const tx = db.transaction('TokenStore', 'readonly');
+  //     const store = tx.objectStore('TokenStore');
+
+  //     const allItems = await store.getAll();
+  //     const token = allItems.filter((item) => item.id === 'token')[0];
+  //     const project = allItems.filter((item) => item.id === 'project')[0];
+  //     const baseUrl = allItems.filter((item) => item.id === 'baseUrl')[0];
+
+  //     if (token && project && baseUrl) {
+  //       await this._pyodide.runPythonAsync(`
+  //         import os;
+  //         os.environ["COGNITE_TOKEN"] = "${token.value}"
+  //         os.environ["COGNITE_PROJECT"] = "${project.value}"
+  //         os.environ["COGNITE_BASE_URL"] = "${baseUrl.value}"
+  //         # Set flag to tell the SDK that we are inside of a Fusion Notebook:
+  //         os.environ["COGNITE_FUSION_NOTEBOOK"] = "1"
+  //       `);
+  //     }
+  //   }
+
+  //   await this._pyodide.runPythonAsync(`
+  //     await piplite.install(['pyodide-http'], keep_going=True);
+  //     await piplite.install(['requests'], keep_going=True);
+  //     # Patching inside the SDK was added in version 5.6.0:
+  //     await piplite.install(['cognite-sdk>=5.6.0'], keep_going=True);
+  //     await piplite.install(['pandas'], keep_going=True);
+  //     await piplite.install(['matplotlib'], keep_going=True);
+  //   `);
+  // }
+
   protected async initKernel(options: IPyodideWorkerKernel.IOptions): Promise<void> {
     // from this point forward, only use piplite (but not %pip)
     await this._pyodide.runPythonAsync(`
@@ -82,6 +124,8 @@ export class PyodideRemoteKernel {
       await piplite.install(['pyodide_kernel'], keep_going=True);
       await piplite.install(['ipython'], keep_going=True);
       import pyodide_kernel
+      import os
+      os.environ["FUCK"] = "Yes"
     `);
     // cd to the kernel location
     if (options.mountDrive && this._localPath) {

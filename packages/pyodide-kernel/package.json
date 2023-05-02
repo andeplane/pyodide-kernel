@@ -1,6 +1,6 @@
 {
   "name": "andeplane-pyodide-kernel",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "JupyterLite - Pyodide Kernel",
   "homepage": "https://github.com/jupyterlite/pyodide-kernel",
   "bugs": {
@@ -54,12 +54,15 @@
   "dependencies": {
     "@jupyterlite/contents": "^0.1.0-beta.18",
     "@jupyterlite/kernel": "^0.1.0-beta.18",
-    "comlink": "^4.3.1"
+    "comlink": "^4.3.1",
+    "idb": "^7.1.1",
+    "mixpanel-browser": "^2.47.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@jupyterlab/testutils": "~3.5.2",
     "@types/jest": "^26.0.10",
+    "@types/mixpanel-browser": "^2.38.1",
     "esbuild": "0.17.10",
     "jest": "^26.4.2",
     "pyodide": "0.23.1",
@@ -72,7 +75,7 @@
   },
   "pyodide-kernel": {
     "packages": {
-      "py/pyodide-kernel": "0.0.12",
+      "py/pyodide-kernel": "0.0.13",
       "py/piplite": "0.0.7",
       "py/ipykernel": "6.9.2",
       "py/widgetsnbextension3/widgetsnbextension": "3.6.4",
