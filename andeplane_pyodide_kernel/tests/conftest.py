@@ -10,7 +10,7 @@ from jupyterlite_core.tests.conftest import (
 )
 
 
-from jupyterlite_pyodide_kernel.constants import (
+from andeplane_pyodide_kernel.constants import (
     PYODIDE_VERSION,
     PYODIDE_KERNEL_NPM_NAME,
 )

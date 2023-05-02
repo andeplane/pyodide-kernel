@@ -6,7 +6,7 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "jupyterlite-pyodide-kernel"
+name = "andeplane-pyodide-kernel"
 dynamic = ["version"]
 readme = "README.md"
 description = "Python kernel for JupyterLite powered by Pyodide"
@@ -46,11 +46,11 @@ Issues = "https://github.com/jupyterlite/pyodide-kernel/issues"
 PyPI = "https://pypi.org/project/jupyterlite-pyodide-kernel"
 
 [project.scripts]
-jupyter-piplite = "jupyterlite_pyodide_kernel.app:main"
+jupyter-piplite = "andeplane_pyodide_kernel.app:main"
 
 [project.entry-points."jupyterlite.addon.v0"]
-jupyterlite-pyodide-kernel-piplite = "jupyterlite_pyodide_kernel.addons.piplite:PipliteAddon"
-jupyterlite-pyodide-kernel-pyodide = "jupyterlite_pyodide_kernel.addons.pyodide:PyodideAddon"
+jupyterlite-pyodide-kernel-piplite = "andeplane_pyodide_kernel.addons.piplite:PipliteAddon"
+jupyterlite-pyodide-kernel-pyodide = "andeplane_pyodide_kernel.addons.pyodide:PyodideAddon"
 
 [project.optional-dependencies]
 dev = [
@@ -88,16 +88,16 @@ docs = [
 allow-direct-references = true
 
 [tool.hatch.version]
-path = "jupyterlite_pyodide_kernel/_version.py"
+path = "andeplane_pyodide_kernel/_version.py"
 
 [tool.hatch.build.targets.sdist]
-artifacts = ["jupyterlite_pyodide_kernel/labextension"]
+artifacts = ["andeplane_pyodide_kernel/labextension"]
 exclude = [
     ".github",
-    "/jupyterlite_pyodide_kernel/tests/fixtures/.pyodide"
+    "/andeplane_pyodide_kernel/tests/fixtures/.pyodide"
 ]
 include = [
-    "/jupyterlite_pyodide_kernel",
+    "/andeplane_pyodide_kernel",
     "/package.json",
     "/install.json",
     "/ts*.json",
@@ -106,22 +106,22 @@ include = [
 
 [tool.hatch.build.targets.wheel]
 include = [
-    "/jupyterlite_pyodide_kernel",
+    "/andeplane_pyodide_kernel",
 ]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlite_pyodide_kernel/labextension" = "share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension"
-"install.json" = "share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/install.json"
+"andeplane_pyodide_kernel/labextension" = "share/jupyter/labextensions/andeplane-pyodide-kernel-extension"
+"install.json" = "share/jupyter/labextensions/andeplane-pyodide-kernel-extension/install.json"
 
 [tool.pytest.ini_options]
 addopts = [
     "--pyargs",
-    "jupyterlite_pyodide_kernel",
+    "andeplane_pyodide_kernel",
     "-vv",
     # asyncio
     "--script-launch-mode=subprocess",
     # cov
-    "--cov=jupyterlite_pyodide_kernel",
+    "--cov=andeplane_pyodide_kernel",
     "--cov-report=term-missing:skip-covered",
     "--cov-report=html:build/reports/htmlcov",
     "--cov-branch",

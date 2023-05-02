@@ -112,9 +112,9 @@ Build and install development versions of the JS packages and lab extension.
 jlpm dist
 ```
 
-| provides | requires        | run after changing                              |
-| -------- | --------------- | ----------------------------------------------- |
-| `dist`   | [build](#build) | `packages/*`<br/>`jupyterlite_pyodide_kernel/*` |
+| provides | requires        | run after changing                            |
+| -------- | --------------- | --------------------------------------------- |
+| `dist`   | [build](#build) | `packages/*`<br/>`andeplane_pyodide_kernel/*` |
 
 Build distributions for `pypi.org` and `npmjs.org`.
 
@@ -124,9 +124,9 @@ Build distributions for `pypi.org` and `npmjs.org`.
 jlpm test
 ```
 
-| provides | requires        | run after changing             |
-| -------- | --------------- | ------------------------------ |
-| `dist`   | [build](#build) | `jupyterlite_pyodide_kernel/*` |
+| provides | requires        | run after changing           |
+| -------- | --------------- | ---------------------------- |
+| `dist`   | [build](#build) | `andeplane_pyodide_kernel/*` |
 
 Run JS and Python tests.
 
@@ -144,9 +144,9 @@ Builds both sites described below.
 jlpm docs:lite
 ```
 
-| provides         | requires        | run after changing                                               |
-| ---------------- | --------------- | ---------------------------------------------------------------- |
-| `build/docs-app` | [build](#build) | `packages/*`<br/>`jupyterlite_pyodide_kernel/*`<br/>`examples/*` |
+| provides         | requires        | run after changing                                             |
+| ---------------- | --------------- | -------------------------------------------------------------- |
+| `build/docs-app` | [build](#build) | `packages/*`<br/>`andeplane_pyodide_kernel/*`<br/>`examples/*` |
 
 Build a minimal JupyterLite demo site.
 
@@ -160,9 +160,9 @@ on a "vanilla" JupyterLab installation, so this is the closest experience to
 jlpm docs:sphinx
 ```
 
-| provides     | requires      | run after changing                                                          |
-| ------------ | ------------- | --------------------------------------------------------------------------- |
-| `build/docs` | [demo](#demo) | `packages/*`<br/>`jupyterlite_pyodide_kernel/*`<br/>`examples/*`<br/>`docs` |
+| provides     | requires      | run after changing                                                        |
+| ------------ | ------------- | ------------------------------------------------------------------------- |
+| `build/docs` | [demo](#demo) | `packages/*`<br/>`andeplane_pyodide_kernel/*`<br/>`examples/*`<br/>`docs` |
 
 Build a site in `build/docs` with Sphinx which includes a copy of the JupyterLite site.
 

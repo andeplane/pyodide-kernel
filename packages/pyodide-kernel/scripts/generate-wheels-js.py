@@ -67,7 +67,7 @@ def index_wheels():
     args = [
         sys.executable,
         "-m",
-        "jupyterlite_pyodide_kernel.app",
+        "andeplane_pyodide_kernel.app",
         "index",
         str(PYODIDE_KERNEL_WHEELS),
     ]

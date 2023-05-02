@@ -3,7 +3,7 @@ try:
 except ImportError:
     import tomli as tomllib
 
-from jupyterlite_pyodide_kernel import __version__
+from andeplane_pyodide_kernel import __version__
 
 from pathlib import Path
 

@@ -15,7 +15,7 @@ from jupyterlite_core.constants import (
     JUPYTER_CONFIG_DATA,
 )
 
-from jupyterlite_pyodide_kernel.constants import (
+from andeplane_pyodide_kernel.constants import (
     PYODIDE_KERNEL_PLUGIN_ID,
     DISABLE_PYPI_FALLBACK,
 )

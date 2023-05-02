@@ -1,6 +1,6 @@
 {
-  "name": "@jupyterlite/pyodide-kernel-extension",
-  "version": "0.0.7",
+  "name": "andeplane-pyodide-kernel-extension",
+  "version": "0.0.12",
   "description": "JupyterLite - Pyodide Kernel Extension",
   "homepage": "https://github.com/jupyterlite/pyodide-kernel",
   "bugs": {
@@ -39,7 +39,7 @@
     "dist": "cd ../../dist && npm pack ../packages/pyodide-kernel-extension",
     "clean": "jlpm clean:lib",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
-    "clean:labextension": "rimraf ../../jupyterlite_pyodide_kernel/labextension",
+    "clean:labextension": "rimraf ../../andeplane_pyodide_kernel/labextension",
     "clean:all": "jlpm clean:lib && jlpm clean:labextension",
     "docs": "typedoc src",
     "watch": "run-p watch:src watch:labextension",
@@ -50,7 +50,7 @@
     "@jupyterlab/coreutils": "^5.5.2",
     "@jupyterlite/contents": "^0.1.0-beta.18",
     "@jupyterlite/kernel": "^0.1.0-beta.18",
-    "@jupyterlite/pyodide-kernel": "^0.0.7",
+    "andeplane-pyodide-kernel": "^0.0.12",
     "@jupyterlite/server": "^0.1.0-beta.18"
   },
   "devDependencies": {
@@ -63,7 +63,7 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "../../jupyterlite_pyodide_kernel/labextension",
+    "outputDir": "../../andeplane_pyodide_kernel/labextension",
     "webpackConfig": "webpack.config.js",
     "sharedPackages": {
       "@jupyterlite/kernel": {

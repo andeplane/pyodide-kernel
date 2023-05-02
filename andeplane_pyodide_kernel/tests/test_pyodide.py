@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from jupyterlite_pyodide_kernel.constants import PYODIDE_URL_ENV_VAR
+from andeplane_pyodide_kernel.constants import PYODIDE_URL_ENV_VAR
 
 
 @pytest.mark.parametrize(
